@@ -4,6 +4,8 @@
   "description": "npm as a build tool",
   "dependencies": {},
   "devDependencies": {
+    "clean-css": "^4.2.1",
+    "clean-css-cli": "^4.2.1",
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
     "uglify-js": "^3.4.9"
@@ -13,6 +15,7 @@
     "lint": "echo '=> linting' && jshint assets/scripts/*.js",
     "test": "echo '=> testing' && mocha test/",
     "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
+    "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
     "pretest": "npm run lint -s"
   },
   "author": "SitePoint",
