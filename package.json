@@ -9,7 +9,8 @@
   },
   "scripts": {
     "info": "echo 'npm as a build tool'",
-    "lint": "echo '=> linting' && jshint assets/scripts/*.js"
+    "lint": "echo '=> linting' && jshint assets/scripts/*.js",
+    "test": "echo '=> testing' && mocha test/"
   },
   "author": "SitePoint",
   "license": "ISC"
