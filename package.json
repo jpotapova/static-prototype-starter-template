@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "npm as a build tool",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "jshint": "^2.9.6",
+    "mocha": "^5.2.0"
+  },
   "scripts": {
-    "info": "echo 'npm as a build tool'"
+    "info": "echo 'npm as a build tool'",
+    "lint": "echo '=> linting' && jshint assets/scripts/*.js"
   },
   "author": "SitePoint",
   "license": "ISC"
