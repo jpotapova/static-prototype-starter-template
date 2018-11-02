@@ -1,0 +1,12 @@
+{
+  "name": "buildtool",
+  "version": "1.0.0",
+  "description": "npm as a build tool",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "info": "echo 'npm as a build tool'"
+  },
+  "author": "SitePoint",
+  "license": "ISC"
+}
