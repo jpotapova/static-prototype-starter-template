@@ -5,12 +5,15 @@
   "dependencies": {},
   "devDependencies": {
     "jshint": "^2.9.6",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "uglify-js": "^3.4.9"
   },
   "scripts": {
     "info": "echo 'npm as a build tool'",
     "lint": "echo '=> linting' && jshint assets/scripts/*.js",
-    "test": "echo '=> testing' && mocha test/"
+    "test": "echo '=> testing' && mocha test/",
+    "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
+    "pretest": "npm run lint -s"
   },
   "author": "SitePoint",
   "license": "ISC"
