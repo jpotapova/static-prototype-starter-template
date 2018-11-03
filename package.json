@@ -6,6 +6,7 @@
   "devDependencies": {
     "clean-css": "^4.2.1",
     "clean-css-cli": "^4.2.1",
+    "http-server": "^0.11.1",
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
     "uglify-js": "^3.4.9",
@@ -19,7 +20,8 @@
     "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
     "pretest": "npm run lint -s",
     "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/",
-    "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s"
+    "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
+    "server": "http-server dist/public/"
   },
   "author": "SitePoint",
   "license": "ISC"
