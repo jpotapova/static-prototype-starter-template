@@ -8,7 +8,8 @@
     "clean-css-cli": "^4.2.1",
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
-    "uglify-js": "^3.4.9"
+    "uglify-js": "^3.4.9",
+    "watch": "^1.0.2"
   },
   "scripts": {
     "info": "echo 'npm as a build tool'",
@@ -16,7 +17,8 @@
     "test": "echo '=> testing' && mocha test/",
     "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
     "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
-    "pretest": "npm run lint -s"
+    "pretest": "npm run lint -s",
+    "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/"
   },
   "author": "SitePoint",
   "license": "ISC"
