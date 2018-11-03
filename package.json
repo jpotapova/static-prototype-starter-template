@@ -2,13 +2,14 @@
   "name": "buildtool",
   "version": "1.0.0",
   "description": "npm as a build tool",
-  "dependencies": {},
   "devDependencies": {
     "clean-css": "^4.2.1",
     "clean-css-cli": "^4.2.1",
+    "concurrently": "^4.0.1",
     "http-server": "^0.11.1",
     "jshint": "^2.9.6",
     "mocha": "^5.2.0",
+    "reload": "^2.3.1",
     "uglify-js": "^3.4.9",
     "watch": "^1.0.2"
   },
@@ -21,7 +22,8 @@
     "pretest": "npm run lint -s",
     "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/",
     "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
-    "server": "http-server dist/public/"
+    "server": "reload -b --dir dist/public",
+    "start": "concurrently \"npm run watch\" \"npm run server\""
   },
   "author": "SitePoint",
   "license": "ISC"
