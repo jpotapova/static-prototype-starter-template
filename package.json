@@ -18,7 +18,8 @@
     "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
     "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
     "pretest": "npm run lint -s",
-    "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/"
+    "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/",
+    "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s"
   },
   "author": "SitePoint",
   "license": "ISC"
