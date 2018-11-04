@@ -1,5 +1,5 @@
 var assert = require("assert");
-var Author = require("../assets/scripts/main.js").Author;
+var Author = require("../src/js/main.js").Author;
 
 describe("Author", function(){
   describe("constructor", function(){
