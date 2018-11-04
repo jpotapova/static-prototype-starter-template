@@ -1,7 +1,7 @@
 {
-  "name": "buildtool",
+  "name": "static-prototype-build-tool",
   "version": "1.0.0",
-  "description": "npm as a build tool",
+  "description": "Static prototype build tool using npm",
   "devDependencies": {
     "clean-css": "^4.2.1",
     "clean-css-cli": "^4.2.1",
@@ -14,17 +14,24 @@
     "watch": "^1.0.2"
   },
   "scripts": {
-    "info": "echo 'npm as a build tool'",
     "lint": "echo '=> linting' && jshint assets/scripts/*.js",
+    "pretest": "npm run lint",
     "test": "echo '=> testing' && mocha test/",
+
+    "scss": "node-sass src/scss/index.scss dist/public/css/index.css",
+    "process:css": "echo '=> processing css' && ",
+
     "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
     "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
-    "pretest": "npm run lint -s",
-    "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/",
+
     "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
+    "watch:scss": "watch 'npm run minify:css' assets/scripts/ assets/css/",
+    "watch": "watch 'npm run minify:js && npm run minify:css' assets/scripts/ assets/css/",
     "server": "reload -b --dir dist/public",
+
+    "prestart": "npm run test && npm run build",
     "start": "concurrently \"npm run watch\" \"npm run server\""
   },
-  "author": "SitePoint",
+  "author": "Jelizaveta Potapova",
   "license": "ISC"
 }
