@@ -16,16 +16,14 @@
   "scripts": {
 
     "scss": "node-sass src/scss/index.scss dist/public/css/index.css",
-    "lint:scss": "sass-lint -c app/config/.sass-lint.yml 'src/scss/**/*.scss' -v -q",
+    "lint:scss": "sass-lint -c .sass-lint.yml 'src/scss/**/*.scss' -v -q",
     "process:css": "echo '=> processing css' && npm run lint:scss -s && npm run scss -s",
     "watch:css": "watch 'npm run process:css -s' src/scss/",
 
     "lint:js": "echo 'lint:js'",
-    "bundle:js": "echo 'bundle:js'",
-    "process:js": "echo '=> processing js' && npm run lint:js -s && npm run bundle:js -s",
+    "bundle": "uglifyjs src/js/main.js -o dist/public/js/main.js -b",
+    "process:js": "echo '=> processing js' && npm run lint:js -s && npm run bundle -s",
     "watch:js": "watch 'npm run process:js -s' src/js/",
-
-    "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
 
     "dev": "echo '=> building' && npm run process:css -s && npm run process:js -s",
     "server": "reload -b --dir dist/public",
