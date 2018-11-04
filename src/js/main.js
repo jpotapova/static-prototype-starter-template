@@ -1,10 +1,10 @@
-(function(){
-  "use strict";
+(function () {
+    "use strict";
 
-  var hello = function(name){
-    return "Hello " + name;
-  };
+    var hello = function (name) {
+        return "Hello " + name;
+    };
 
-  exports.hello = hello;
+    exports.hello = hello;
 
-})();
+}());
