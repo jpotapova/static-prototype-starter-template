@@ -19,7 +19,8 @@
     "test": "echo '=> testing' && mocha test/",
 
     "scss": "node-sass src/scss/index.scss dist/public/css/index.css",
-    "process:css": "echo '=> processing css' && ",
+    "lint:scss": "sass-lint -c app/config/.sass-lint.yml 'src/scss/**/*.scss' -v -q",
+    "process:css": "echo '=> processing css' && npm run lint:scss && npm run scss",
 
     "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
     "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
