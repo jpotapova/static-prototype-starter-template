@@ -1,8 +1,5 @@
-// var assert = require("assert");
-// var hello = require("../src/js/main.js").hello;
-//
-// describe("Example test", function(){
-//   it("Hello world", function(){
-//     assert.equal("Hello world", hello("world"));
-//   });
-// });
+var hello = require("../src/js/main.js").hello;
+
+test("Example test", function(){
+    expect(hello("world")).toBe("Hello world");
+});
